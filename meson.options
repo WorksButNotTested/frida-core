@@ -34,6 +34,12 @@ option('compiler_backend',
   description: 'Include frida-compile backend powered by GumJS',
 )
 
+option('gdbstub_backend',
+  type: 'feature',
+  value: 'auto',
+  description: 'Include the Gdb Stub backend',
+)
+
 option('compiler_snapshot',
   type: 'feature',
   value: 'auto',

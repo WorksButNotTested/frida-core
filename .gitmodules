@@ -1,3 +1,6 @@
 [submodule "releng"]
 	path = releng
 	url = https://github.com/frida/releng.git
+[submodule "src/gdbstub/frida-gdbstub"]
+	path = src/gdbstub/frida-gdbstub
+	url = https://github.com/MissingFuzz/frida-gdbstub-private.git
