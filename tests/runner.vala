@@ -164,11 +164,7 @@ namespace Frida.Test {
 				}
 				break;
 			case CPU.ARM_64:
-				if (GLib.ByteOrder.HOST == GLib.ByteOrder.BIG_ENDIAN) {
-					abi_name = "arm64be";
-				} else {
-					abi_name = "arm64";
-				}
+				abi_name = (ByteOrder.HOST == ByteOrder.BIG_ENDIAN) ? "arm64be" : "arm64";
 				break;
 			case CPU.MIPS:
 				abi_name = "mips";

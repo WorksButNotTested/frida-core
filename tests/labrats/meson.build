@@ -36,14 +36,6 @@ if host_os == 'macos'
   ]
 endif
 
-if host_machine.endian() == 'big'
-  if host_abi == 'arm' or host_abi == 'armhf'
-    host_abi = 'armbe8'
-  elif host_abi == 'arm64'
-    host_abi = 'arm64be'
-  endif
-endif
-
 if host_os == 'linux'
   labrat_files += [
     'sleeper-linux-' + host_abi,

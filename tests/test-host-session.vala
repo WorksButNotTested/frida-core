@@ -1549,14 +1549,14 @@ namespace Frida.HostSessionTest {
 		}
 
 		private static async void spawn (Harness h) {
-			if (!GLib.Test.slow ()) {
-				if (Frida.Test.os () == Frida.Test.OS.ANDROID ||
-					Frida.Test.os_arch_suffix () == "-linux-arm" ||
-					Frida.Test.os_arch_suffix () == "-linux-arm64be") {
-					stdout.printf ("<skipping, run in slow mode> ");
-					h.done ();
-					return;
-				}
+			if (!GLib.Test.slow () && (
+						Frida.Test.os () == Frida.Test.OS.ANDROID ||
+						Frida.Test.os_arch_suffix () == "-linux-arm" ||
+						Frida.Test.os_arch_suffix () == "-linux-arm64be"
+					)) {
+				stdout.printf ("<skipping, run in slow mode> ");
+				h.done ();
+				return;
 			}
 
 			var backend = new LinuxHostSessionBackend ();
